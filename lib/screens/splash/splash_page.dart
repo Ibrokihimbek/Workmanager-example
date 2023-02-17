@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:workmanager/cubit/lat_long_cubit/lat_long_cubit.dart';
-import 'package:workmanager/cubit/lat_long_cubit/lat_long_state.dart';
-import 'package:workmanager/screens/lat_long/lat_long_page.dart';
-import 'package:workmanager/utils/app_loties.dart';
+import 'package:workmanager_example/cubit/lat_long_cubit/lat_long_cubit.dart';
+import 'package:workmanager_example/cubit/lat_long_cubit/lat_long_state.dart';
+import 'package:workmanager_example/screens/lat_long/lat_long_page.dart';
+import 'package:workmanager_example/utils/app_loties.dart';
 
 import '../../utils/app_colors.dart';
 

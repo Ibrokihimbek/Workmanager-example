@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:workmanager/data/models/lat_long.dart';
+import 'package:workmanager_example/data/models/lat_long.dart';
 
 class LatLongState extends Equatable {
   final CachedLatLong latLong;

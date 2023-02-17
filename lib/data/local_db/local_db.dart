@@ -1,8 +1,7 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:workmanager/data/local_db/cached_lat_long.dart';
-import 'package:workmanager/data/models/lat_long.dart';
-
+import 'package:workmanager_example/data/local_db/cached_lat_long.dart';
+import 'package:workmanager_example/data/models/lat_long.dart';
 
 class LocalDatabase {
   static final LocalDatabase getInstance = LocalDatabase._init();
@@ -30,12 +29,13 @@ class LocalDatabase {
   Future _createDB(Database db, int version) async {
     const idType = "INTEGER PRIMARY KEY AUTOINCREMENT";
     const textType = "TEXT NOT NULL";
+    const numType = "DOUBLE NOT NULL";
 
     await db.execute('''
     CREATE TABLE $latLongTable (
     ${CachedLatLongFields.id} $idType,
-    ${CachedLatLongFields.lat} $textType,
-    ${CachedLatLongFields.long} $textType,
+    ${CachedLatLongFields.lat} $numType,
+    ${CachedLatLongFields.long} $numType,
     ${CachedLatLongFields.dateTime} $textType
     )
     ''');
@@ -45,13 +45,19 @@ class LocalDatabase {
 
   //-------------------------------------------Cached Users Table------------------------------------
 
-  static Future<CachedLatLong> insertCachedLatLong(CachedLatLong cachedLatLong) async {
+  static Future<CachedLatLong> insertCachedLatLong(
+      CachedLatLong cachedLatLong) async {
     final db = await getInstance.database;
     final id = await db.insert(latLongTable, cachedLatLong.toJson());
+    print('''
+
+
+QO'SHILDI
+
+
+''');
     return cachedLatLong.copyWith(id: id);
   }
-
-
 
   static Future<List<CachedLatLong>> getAllCachedLatLongs() async {
     final db = await getInstance.database;
@@ -63,15 +69,9 @@ class LocalDatabase {
     return result.map((json) => CachedLatLong.fromJson(json)).toList();
   }
 
-
-
-
-
   static Future<int> deleteAllCachedLatLongs() async {
     final db = await getInstance.database;
 
     return await db.delete(latLongTable);
   }
 }
-
-

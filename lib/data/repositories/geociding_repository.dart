@@ -1,6 +1,6 @@
-import 'package:workmanager/data/api/api_service.dart';
-import 'package:workmanager/data/models/lat_long.dart';
-import 'package:workmanager/data/models/my_response/response_model.dart';
+import 'package:workmanager_example/data/api/api_service.dart';
+import 'package:workmanager_example/data/models/lat_long.dart';
+import 'package:workmanager_example/data/models/my_response/response_model.dart';
 
 class GeocodingRepo {
   GeocodingRepo({required this.apiService});

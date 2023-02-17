@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:location/location.dart';
-import 'package:workmanager/data/models/lat_long.dart';
+import 'package:workmanager_example/data/models/lat_long.dart';
 
 import 'lat_long_state.dart';
 
@@ -11,7 +11,7 @@ class LatLongCubit extends Cubit<LatLongState> {
             latLong: CachedLatLong(
               long: 0,
               lat: 0,
-              dateTime: DateTime.now(),
+              dateTime: DateTime.now().toString(),
             ),
           ),
         ) {
@@ -20,6 +20,8 @@ class LatLongCubit extends Cubit<LatLongState> {
   }
 
   Location location = Location();
+  double lat = 0;
+  double long = 0;
 
   bool _serviceEnabled = false;
   PermissionStatus _permissionGranted = PermissionStatus.denied;
@@ -51,7 +53,7 @@ class LatLongCubit extends Cubit<LatLongState> {
     CachedLatLong latLong = CachedLatLong(
       long: locationData.longitude!,
       lat: locationData.longitude!,
-      dateTime: DateTime.now(),
+      dateTime: DateTime.now().toString(),
     );
     emit(
       state.copyWith(latLong: latLong),
@@ -61,6 +63,8 @@ class LatLongCubit extends Cubit<LatLongState> {
   listenCurrentLocation() {
     location.onLocationChanged.listen(
       (event) {
+        lat = event.latitude!;
+        long = event.longitude!;
         print("LOCATION CHANGED: ${event.longitude}, ${event.latitude}");
       },
     );

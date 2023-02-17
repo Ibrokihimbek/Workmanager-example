@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:workmanager/data/api/custom_exceptions.dart';
+import 'package:workmanager_example/data/api/custom_exceptions.dart';
 
 class ApiClient {
   ApiClient() {

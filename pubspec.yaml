@@ -1,4 +1,4 @@
-name: workmanager
+name: workmanager_example
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.0 <3.0.0'
+  sdk: '>=2.19.1 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -35,15 +35,21 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  workmanager: ^0.5.1
   dio: ^4.0.6
   lottie: ^2.0.0
   flutter_bloc: ^8.1.2
   json_serializable: ^6.3.1
   sqflite: ^2.2.4+1
   equatable: ^2.0.5
+  change_app_package_name: ^1.1.0
+  logger: ^1.1.0
+  
   
   #Mapping packages
   location: ^4.4.0
+  get_it: ^7.2.0
+  intl: ^0.18.0
   
   
 

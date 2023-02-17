@@ -1,10 +1,10 @@
-import 'package:workmanager/data/local_db/cached_lat_long.dart';
+import 'package:workmanager_example/data/local_db/cached_lat_long.dart';
 
 class CachedLatLong {
   final int? id;
   final double long;
   final double lat;
-  final DateTime dateTime;
+  final String dateTime;
 
   CachedLatLong({
     this.id,
@@ -17,7 +17,7 @@ class CachedLatLong {
     int? id,
     double? long,
     double? lat,
-    DateTime? dateTime,
+    String? dateTime,
   }) =>
       CachedLatLong(
         dateTime: dateTime ?? this.dateTime,
@@ -30,7 +30,7 @@ class CachedLatLong {
         id: json[CachedLatLongFields.id] as int?,
         lat: json[CachedLatLongFields.lat] as double,
         long: json[CachedLatLongFields.long] as double,
-        dateTime:  json[CachedLatLongFields.dateTime] as DateTime,
+        dateTime:  json[CachedLatLongFields.dateTime] as String,
       );
 
   Map<String, Object?> toJson() => {

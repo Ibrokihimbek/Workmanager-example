@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:workmanager/data/api/api_client.dart';
-import 'package:workmanager/data/geocoding/geocoding/geocoding.dart';
-import 'package:workmanager/data/models/my_response/response_model.dart';
-import 'package:workmanager/utils/apikey.dart';
+import 'package:workmanager_example/data/api/api_client.dart';
+import 'package:workmanager_example/data/geocoding/geocoding/geocoding.dart';
+import 'package:workmanager_example/data/models/my_response/response_model.dart';
+import 'package:workmanager_example/utils/apikey.dart';
 
 class ApiService extends ApiClient {
   Future<AppResponse> getLocationName(
