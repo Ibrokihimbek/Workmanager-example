@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:workmanager/data/models/lat_long.dart';
 
 class LatLongPage extends StatelessWidget {
-  const LatLongPage({super.key});
+
+  const LatLongPage({super.key, });
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,8 @@ class LatLongPage extends StatelessWidget {
         title: const Text('Workmanager'),
       ),
       body: Column(
-        children: [],
+        children: [
+        ],
       ),
     );
   }

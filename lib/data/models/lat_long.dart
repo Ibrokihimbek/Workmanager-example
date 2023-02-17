@@ -2,8 +2,8 @@ import 'package:workmanager/data/local_db/cached_lat_long.dart';
 
 class CachedLatLong {
   final int? id;
-  final String long;
-  final String lat;
+  final double long;
+  final double lat;
   final DateTime dateTime;
 
   CachedLatLong({
@@ -15,8 +15,8 @@ class CachedLatLong {
 
   CachedLatLong copyWith({
     int? id,
-    String? long,
-    String? lat,
+    double? long,
+    double? lat,
     DateTime? dateTime,
   }) =>
       CachedLatLong(
@@ -28,8 +28,8 @@ class CachedLatLong {
 
   static CachedLatLong fromJson(Map<String, Object?> json) => CachedLatLong(
         id: json[CachedLatLongFields.id] as int?,
-        lat: json[CachedLatLongFields.lat] as String,
-        long: json[CachedLatLongFields.long] as String,
+        lat: json[CachedLatLongFields.lat] as double,
+        long: json[CachedLatLongFields.long] as double,
         dateTime:  json[CachedLatLongFields.dateTime] as DateTime,
       );
 

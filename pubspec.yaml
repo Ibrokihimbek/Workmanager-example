@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: '>=2.19.0 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -38,12 +38,14 @@ dependencies:
   dio: ^4.0.6
   lottie: ^2.0.0
   flutter_bloc: ^8.1.2
-  #Mapping packages
-  location: ^4.4.0
-  geolocator: ^9.0.2
-  google_maps_flutter: ^2.2.2
   json_serializable: ^6.3.1
   sqflite: ^2.2.4+1
+  equatable: ^2.0.5
+  
+  #Mapping packages
+  location: ^4.4.0
+  
+  
 
 dev_dependencies:
   flutter_test:
@@ -68,9 +70,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/
+    - assets/loties/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
