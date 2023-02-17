@@ -10,8 +10,6 @@ import 'package:workmanager_example/screens/splash/splash_page.dart';
 void callbackDispatcher() {
   Workmanager().executeTask(
     (task, inputData) async {
-      int? totalExecutions;
-
       try {} catch (err) {
         Logger().e(
           err.toString(),
@@ -29,7 +27,13 @@ void main() {
     callbackDispatcher,
     isInDebugMode: true,
   );
-  Workmanager().registerOneOffTask("task-identifier", "simpleTask");
+  Workmanager().registerPeriodicTask(
+    "task-identifier",
+    "simpleTask",
+    frequency: const Duration(
+      minutes: 15,
+    ),
+  );
   runApp(
     MultiBlocProvider(
       providers: [
