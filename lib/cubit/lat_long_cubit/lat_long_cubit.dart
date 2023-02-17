@@ -20,8 +20,6 @@ class LatLongCubit extends Cubit<LatLongState> {
   }
 
   Location location = Location();
-  double lat = 0;
-  double long = 0;
 
   bool _serviceEnabled = false;
   PermissionStatus _permissionGranted = PermissionStatus.denied;
@@ -63,9 +61,7 @@ class LatLongCubit extends Cubit<LatLongState> {
   listenCurrentLocation() {
     location.onLocationChanged.listen(
       (event) {
-        lat = event.latitude!;
-        long = event.longitude!;
-        print("LOCATION CHANGED: ${event.longitude}, ${event.latitude}");
+        // print("LOCATION CHANGED: ${event.longitude}, ${event.latitude}");
       },
     );
   }
