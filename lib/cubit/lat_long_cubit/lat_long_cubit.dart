@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:location/location.dart';
+import 'package:workmanager/workmanager.dart';
 import 'package:workmanager_example/data/models/lat_long.dart';
 
 import 'lat_long_state.dart';
@@ -44,18 +45,21 @@ class LatLongCubit extends Cubit<LatLongState> {
         return;
       }
     }
-
+    Workmanager().registerPeriodicTask(
+      "task-identifier",
+      "simpleTask",
+    );
     // lakatsiyani oladi
 
-    LocationData locationData = await location.getLocation();
-    CachedLatLong latLong = CachedLatLong(
-      long: locationData.longitude!,
-      lat: locationData.longitude!,
-      dateTime: DateTime.now().toString(),
-    );
-    emit(
-      state.copyWith(latLong: latLong),
-    );
+    // LocationData locationData = await location.getLocation();
+    // CachedLatLong latLong = CachedLatLong(
+    //   long: locationData.longitude!,
+    //   lat: locationData.longitude!,
+    //   dateTime: DateTime.now().toString(),
+    // );
+    // emit(
+    //   state.copyWith(latLong: latLong),
+    // );
   }
 
   listenCurrentLocation() {
